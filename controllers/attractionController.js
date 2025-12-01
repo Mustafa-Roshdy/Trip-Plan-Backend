@@ -1,4 +1,4 @@
-const Attraction = require('../models/attractionModel');
+const Attraction = require('../models/attractionModel.js');
 const fs = require('fs');
 const path = require('path');
 

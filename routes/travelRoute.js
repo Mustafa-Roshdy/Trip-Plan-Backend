@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const travelController = require("../controllers/travelController");
+const travelController = require("../controllers/travelController.js");
 
 // POST /api/travel/search
 router.post("/travel/search", async (req, res) => {

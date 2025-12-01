@@ -1,4 +1,4 @@
-const Contact = require("../models/contactModel");
+const Contact = require("../models/contactModel.js");
 
 const USER_FIELDS = "firstName lastName email photo role";
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const programController = require("../controllers/programController");
-const { protect, authorizeRoles } = require("../middleware/authMiddleware");
+const programController = require("../controllers/programController.js");
+const { protect, authorizeRoles } = require("../middleware/authMiddleware.js");
 
 // CREATE Program (logged-in users only)
 router.post("/program/create", protect, async (req, res) => {

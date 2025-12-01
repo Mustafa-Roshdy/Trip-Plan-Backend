@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const tripPlanController = require("../controllers/tripPlanController");
-const tripPlanValidation = require("../validation/tripPlanValidation");
-const { protect, authorizeRoles } = require("../middleware/authMiddleware");
+const tripPlanController = require("../controllers/tripPlanController.js");
+const tripPlanValidation = require("../validation/tripPlanValidation.js");
+const { protect, authorizeRoles } = require("../middleware/authMiddleware.js");
 
 // CREATE TripPlan (logged-in users only)
 router.post("/tripplan/create", protect, async (req, res) => {

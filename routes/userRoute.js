@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../controllers/userController");
-const userValidation = require("../validation/userValidation");
-const { protect } = require("../middleware/authMiddleware");
+const userController = require("../controllers/userController.js");
+const userValidation = require("../validation/userValidation.js");
+const { protect } = require("../middleware/authMiddleware.js");
 const multer = require("multer");
 const path = require("path");
 const jwt = require("jsonwebtoken");

@@ -1,7 +1,7 @@
 // controllers/authController.js
 const bcrypt = require("bcryptjs");
-const User = require("../models/userModel");
-const { signToken } = require("../middleware/authMiddleware");
+const User = require("../models/userModel.js");
+const { signToken } = require("../middleware/authMiddleware.js");
 
 // REGISTER
 async function registerUser(data) {

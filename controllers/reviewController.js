@@ -1,5 +1,5 @@
-const Review = require("../models/reviewModel");
-const Place = require("../models/placeModel");
+const Review = require("../models/reviewModel.js");
+const Place = require("../models/placeModel.js");
 
 // Create a review
 async function createReview(data) {

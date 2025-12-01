@@ -3,9 +3,9 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
-const Post = require("../models/postModel");
-const User = require("../models/userModel");
-const { protect } = require("../middleware/authMiddleware");
+const Post = require("../models/postModel.js");
+const User = require("../models/userModel.js");
+const { protect } = require("../middleware/authMiddleware.js");
 
 const router = express.Router();
 

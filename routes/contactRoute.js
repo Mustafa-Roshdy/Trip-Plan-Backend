@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const contactController = require("../controllers/contactController");
-const { protect } = require("../middleware/authMiddleware");
+const contactController = require("../controllers/contactController.js");
+const { protect } = require("../middleware/authMiddleware.js");
 const {
   createContactValidation,
   addMessageValidation,
   updateMessageValidation,
-} = require("../validation/contactValidation");
+} = require("../validation/contactValidation.js");
 
 // ==========================
 // GET CONTACTS FOR USER

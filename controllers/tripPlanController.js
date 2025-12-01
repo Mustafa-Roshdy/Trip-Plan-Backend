@@ -1,4 +1,4 @@
-const TripPlan = require("../models/tripPlanSchema");
+const TripPlan = require("../models/tripPlanSchema.js");
 
 // CREATE TripPlan
 async function createTripPlan(data) {

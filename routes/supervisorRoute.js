@@ -8,7 +8,7 @@ const {
   getUserById,
   updateUser,
   deleteUser
-} = require('../controllers/userController');
+} = require('../controllers/userController.js');
 
 const {
   createPlace,
@@ -16,7 +16,7 @@ const {
   getPlaceById,
   updatePlace,
   deletePlace
-} = require('../controllers/placeController');
+} = require('../controllers/placeController.js');
 
 const {
   getAllBookings,
@@ -24,7 +24,7 @@ const {
   createBooking,
   updateBooking,
   deleteBooking
-} = require('../controllers/bookingController');
+} = require('../controllers/bookingController.js');
 
 const {
   createTripPlan,
@@ -32,7 +32,7 @@ const {
   getTripPlanById,
   updateTripPlan,
   deleteTripPlan
-} = require('../controllers/tripPlanController');
+} = require('../controllers/tripPlanController.js');
 
 const {
   getAllContacts,
@@ -40,7 +40,7 @@ const {
   createContact,
   updateContact,
   deleteContact
-} = require('../controllers/contactController');
+} = require('../controllers/contactController.js');
 
 const {
   createPost,
@@ -48,7 +48,7 @@ const {
   getPostById,
   updatePost,
   deletePost
-} = require('../controllers/postController');
+} = require('../controllers/postController.js');
 
 const {
   createProgram,
@@ -56,7 +56,7 @@ const {
   getProgramById,
   updateProgram,
   deleteProgram
-} = require('../controllers/programController');
+} = require('../controllers/programController.js');
 
 // Users routes
 router.get('/users', getAllUsers);

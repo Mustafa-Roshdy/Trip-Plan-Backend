@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const bookingController = require("../controllers/bookingController");
-const bookingValidation = require("../validation/bookingValidation");
-const { protect, authorizeRoles } = require("../middleware/authMiddleware");
-const Place = require("../models/placeModel");
-const User = require("../models/userModel");
+const bookingController = require("../controllers/bookingController.js");
+const bookingValidation = require("../validation/bookingValidation.js");
+const { protect, authorizeRoles } = require("../middleware/authMiddleware.js");
+const Place = require("../models/placeModel.js");
+const User = require("../models/userModel.js");
 const {
   sendBookingConfirmationToUser,
   sendBookingNotificationToAdmin,
-} = require("../services/emailService");
+} = require("../services/emailService.js");
 
 // ==========================
 // CREATE BOOKING

@@ -1,4 +1,4 @@
-const Place = require("../models/placeModel");
+const Place = require("../models/placeModel.js");
 
 // CREATE Place
 async function createPlace(data) {

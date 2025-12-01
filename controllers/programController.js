@@ -1,4 +1,4 @@
-const Program = require("../models/programModel");
+const Program = require("../models/programModel.js");
 
 // CREATE Program
 async function createProgram(data) {

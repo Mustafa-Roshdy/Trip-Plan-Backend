@@ -3,9 +3,9 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
-const placeController = require("../controllers/placeController");
-const placeValidation = require("../validation/placeValidation");
-const { protect, authorizeRoles } = require("../middleware/authMiddleware");
+const placeController = require("../controllers/placeController.js");
+const placeValidation = require("../validation/placeValidation.js");
+const { protect, authorizeRoles } = require("../middleware/authMiddleware.js");
 
 // Multer storage for image uploads
 const uploadsDir = path.join(__dirname, "..", "uploads");
