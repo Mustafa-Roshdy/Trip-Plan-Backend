@@ -19,8 +19,8 @@ const AttractionRoutes = require("./routes/attractionRoute");
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:3000",
-  "http://localhost:8080",
+  "http://127.0.0.1:3000",
+  "http://127.0.0.1:8080",
   "http://127.0.0.1:5500",
 ];
 
@@ -77,6 +77,3 @@ app.use((err, req, res, next) => {
 
 
 // Server
-app.listen(8000, () => {
-  console.log("Server Running at port 8000");
-});
