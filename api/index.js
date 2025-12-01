@@ -49,7 +49,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/TripPlanDB");
+    await mongoose.connect(`${process.env.DB_URL}/TripPlanDB`);
     console.log("MongoDB Connected");
   } catch (err) {
     console.error("MongoDB Connection Error:", err);
