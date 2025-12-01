@@ -3,9 +3,9 @@ const express = require("express");
 const router = express.Router();
 const { ChatGoogleGenerativeAI } = require("@langchain/google-genai");
 const fetch = require("node-fetch");
-const Place = require("../models/placeModel");
-const Attraction = require("../models/attractionModel");
-const attractionController = require("../controllers/attractionController");
+const Place = require("../models/placeModel.js");
+const Attraction = require("../models/attractionModel.js");
+const attractionController = require("../controllers/attractionController.js");
 
 // ========================================================
 // FIREWORKS EMBEDDINGS (Reusable, with OpenAI fallback)
@@ -300,5 +300,6 @@ Return ONLY this JSON format:
     return res.status(500).json({ success: false, message: err.message || "Server error" });
   }
 });
+
 
 module.exports = router;
