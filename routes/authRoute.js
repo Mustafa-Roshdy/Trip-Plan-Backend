@@ -1,10 +1,10 @@
 // routes/authRoute.js
 const express = require("express");
 const router = express.Router();
-const { registerUser, loginUser, loginDashboard } = require("../controllers/authController");
-const userValid = require("../validation/userValidation");
+const { registerUser, loginUser, loginDashboard } = require("../controllers/authController.js");
+const userValid = require("../validation/userValidation.js");
 const Joi = require("joi");
-const User=require('../models/userModel')
+const User=require('../models/userModel.js')
 
 const loginSchema = Joi.object({
   email: Joi.string().email().required(),
@@ -94,3 +94,4 @@ router.post("/auth/admin", async (req, res) => {
 });
 
 module.exports = router;
+
