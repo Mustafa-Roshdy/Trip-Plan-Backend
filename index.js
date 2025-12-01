@@ -4,17 +4,17 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config();
 
-const BookingRoute = require("./routes/bookingRoute");
-const TripPlanRoutes = require("./routes/tripPlanRoute");
-const UserRoutes = require("./routes/userRoute");
-const ProgramRoutes = require("./routes/programRoute");
-const PlaceRoutes = require("./routes/placeRoute");
-const AuthRoutes = require("./routes/authRoute");
-const PostRoutes = require("./routes/postRoute");
-const TravelRoutes = require("./routes/travelRoute");
-const ContactRoutes = require("./routes/contactRoute");
-const ReviewRoutes = require("./routes/reviewRoute");
-const AttractionRoutes = require("./routes/attractionRoute");
+const BookingRoute = require("./routes/bookingRoute.js");
+const TripPlanRoutes = require("./routes/tripPlanRoute.js");
+const UserRoutes = require("./routes/userRoute.js");
+const ProgramRoutes = require("./routes/programRoute.js");
+const PlaceRoutes = require("./routes/placeRoute.js");
+const AuthRoutes = require("./routes/authRoute.js");
+const PostRoutes = require("./routes/postRoute.js");
+const TravelRoutes = require("./routes/travelRoute.js");
+const ContactRoutes = require("./routes/contactRoute.js");
+const ReviewRoutes = require("./routes/reviewRoute.js");
+const AttractionRoutes = require("./routes/attractionRoute.js");
 
 const app = express();
 
@@ -77,3 +77,4 @@ app.use((err, req, res, next) => {
 
 
 // Server
+
