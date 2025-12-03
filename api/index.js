@@ -3,7 +3,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-require("colors"); // اختياري، بس حلو للـ console
 
 const app = express();
 
@@ -37,7 +36,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // =======================
 const connectDB = async () => {
   try {
-    console.log("جاري الاتصال بـ MongoDB...".cyan);
+    console.log("جاري الاتصال بـ MongoDB...");
 
     const conn = await mongoose.connect(process.env.DB_URL, {
       dbName: "TripPlanDB", // اسم الداتابيز
@@ -49,9 +48,9 @@ const connectDB = async () => {
       bufferCommands: false,           // ← أهم سطر عشان يختفي الـ timeout
     });
 
-    console.log(`MongoDB متصل بنجاح: ${conn.connection.host}`.green.underline.bold);
+    console.log(`MongoDB متصل بنجاح: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`خطأ في الاتصال بـ MongoDB: ${error.message}`.red.bold);
+    console.error(`خطأ في الاتصال بـ MongoDB: ${error.message}`);
     process.exit(1); // يوقف السيرفر تمامًا لو مفيش داتابيز
   }
 };
@@ -85,7 +84,7 @@ app.use("*", (req, res) => {
 // Global Error Handler
 // =======================
 app.use((err, req, res, next) => {
-  console.error("Error:", err.stack.red);
+  console.error("Error:", err.stack);
   res.status(err.status || 500).json({
     success: false,
     message: err.message || "Server Error",
@@ -98,22 +97,22 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 8000;
 
 const server = app.listen(PORT, () => {
-  console.log(`السيرفر شغال على الپورت ${PORT} `.yellow.bold);
+  console.log(`السيرفر شغال على الپورت ${PORT} `);
 });
 
 // Graceful Shutdown (مهم جدًا على Render / Railway / Vercel)
 process.on("SIGTERM", () => {
-  console.log("SIGTERM received: إغلاق السيرفر بأمان...".yellow);
+  console.log("SIGTERM received: إغلاق السيرفر بأمان...");
   server.close(() => {
     mongoose.connection.close(false, () => {
-      console.log("MongoDB connection closed.".cyan);
+      console.log("MongoDB connection closed.");
       process.exit(0);
     });
   });
 });
 
 process.on("SIGINT", () => {
-  console.log("SIGINT received: إغلاق السيرفر...".yellow);
+  console.log("SIGINT received: إغلاق السيرفر...");
   server.close(() => {
     mongoose.connection.close();
     process.exit(process.exit(0));
