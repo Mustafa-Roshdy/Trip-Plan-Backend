@@ -4,6 +4,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config();
 
+// MongoDB Connection
+main().catch((err) => console.log(err));
+
+async function main() {
+  try {
+    await mongoose.connect(`${process.env.DB_URL}/TripPlanDB`);
+    console.log("MongoDB Connected");
+  } catch (err) {
+    console.error("MongoDB Connection Error:", err);
+  }
+}
+
 const BookingRoute = require("./routes/bookingRoute.js");
 const TripPlanRoutes = require("./routes/tripPlanRoute.js");
 const UserRoutes = require("./routes/userRoute.js");
@@ -44,17 +56,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
 
-// MongoDB Connection
-main().catch((err) => console.log(err));
 
-async function main() {
-  try {
-    await mongoose.connect(`${process.env.DB_URL}/TripPlanDB`);
-    console.log("MongoDB Connected");
-  } catch (err) {
-    console.error("MongoDB Connection Error:", err);
-  }
-}
 
 // Routes
 app.use("/api", AuthRoutes)
